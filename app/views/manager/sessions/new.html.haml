@@ -1,0 +1,17 @@
+.get-started
+	.row
+		.col-sm-2.col-sm-offset-5
+			.lead
+				%p 
+					Logowanie do 
+					= @tenant.name
+			= form_for @user, :url => manager_user_session_path do |f|
+				.form-horizontal
+					.form-group
+						%input.form-control{:type=>'text', :name=>'manager_user[email]', :placeholder => 'login'}
+					.form-group
+						%input.form-control{:type=>'password', :name=>'manager_user[password]', :placeholder => 'hasło'}
+					.form-group
+						= f.check_box :remember_me
+					.form-group
+						%button.btn.btn-default{:type=>'submit'} Logowanie

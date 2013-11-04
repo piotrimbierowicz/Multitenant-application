@@ -1,0 +1,12 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pl:
+  activerecord:
+    attributes:
+      user:
+        password: 'Hasło'
+  alerts:
+    tenant:
+      name_already_taken: 'Wybrana nazwa jest już zajęta.'
+      

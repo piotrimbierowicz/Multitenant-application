@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multitenant Appliaction</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="background-image">
+	<%= image_tag asset_path 'images/landing_background.jpg' %>
+</div>
+
+<div class="landing-content">
+	<div class="container">
+
+		<div class="landing-notifications">
+			<div class="row">
+				<div class="col-sm-2 col-sm-offset-5">
+					<div class="row">
+						<% unless flash[:notice].nil? %>
+							<div class="alert alert-info"><%= flash[:notice].html_safe %></div>
+						<% end %>
+						<% unless flash[:alert].nil? %>
+							<div class="alert alert-info"><%= flash[:alert].html_safe %></div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>

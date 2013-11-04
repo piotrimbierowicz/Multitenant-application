@@ -1,0 +1,29 @@
+.get-started
+	.row
+		.col-sm-2.col-sm-offset-5
+
+			.row
+				%h3 Zaloguj się do organizacji
+				= form_tag redirect_to_organization_path do
+					.form-group
+						.input-group.m-t-lg.border-shadow
+							%input.form-control{:type=>'text', :name => 'tenant', :placeholder => 'nazwa organizacji'}
+							%span.input-group-btn
+								%button.btn.btn-default{:type=>'button'} 
+									Dalej
+									%i.glyphicon.glyphicon-chevron-right
+			.row
+				%hr
+				%h4 Załóż bezpłatne konto
+				%p.m-b-lg  To konto stanie się administratorem organizacji. Następnie będziesz mógł utworzyć dodatkowe konta użytkowników w ramach jednej organizacji.
+			= form_tag create_organization_path do
+				.form-horizontal
+					.form-group
+						%input.form-control.border-shadow{:type=>'text', :name=>'tenant', :placeholder => 'nazwa organizacji'}
+					.form-group
+						%input.form-control.border-shadow{:type=>'text', :name => 'email', :placeholder => 'email'}
+					.form-group
+						%input.form-control.border-shadow{:type=>'password', :name => 'password', :placeholder => 'hasło'}
+					.form-group
+						%button.btn.btn-default{:type=>'submit'} 
+							Rejestracja
